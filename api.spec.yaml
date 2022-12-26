@@ -1,0 +1,74 @@
+openapi: 3.0.0
+info:
+  title: "E-wok API"
+  description:
+    "E-wok API is a REST API responsible for manage the E-wok online home
+    delivery service orders."
+  version: "1.0.0"
+paths:
+  /orders/:
+    get:
+      summary: "This endpoint return all E-wok orders."
+      responses:
+        "200":
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OrderListResponse"
+  /orders/user/{username}:
+    get:
+      summary: "This endpoint return all E-wok orders for the given username."
+      parameters:
+        - name: "username"
+          description: "The username of the order."
+          required: true
+          in: "path"
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OrderListResponse"
+        "404":
+          description: "User not found"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  error:
+                    type: "string"
+                    example: "User not found for the given Username"
+components:
+  schemas:
+    OrderListResponse:
+      type: "array"
+      items:
+        $ref: "#/components/schemas/OrderResponse"
+    OrderResponse:
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+          format: "int32"
+        username:
+          type: "string"
+        wokId:
+          type: "string"
+          enum: ["Wokling","Wicket","Endor","Kneesaa"]
+        extraIngredientId:
+          type: "string"
+          enum: ["None","Cherrytomato","Prawns","Pineapple"]
+        quantity:
+          type: "integer"
+          format: "int32"
+        totalToPay:
+          type: "integer"
+          format: "int32"
+        orderDate:
+          type: "string"
+          format: "date-time"
