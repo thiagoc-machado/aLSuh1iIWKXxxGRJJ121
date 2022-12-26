@@ -9,75 +9,33 @@ body {
   align-items: center;
   padding: 30px;
 }
+.menu {
+  font-size: 1.7vh;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+  width: 700px;
+  border-radius: 50px;
+  background: #cfcfcf;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
 .title {
   font-family: Lucida Handwriting;
   font-size: 2vh;
   padding: 10px;
   margin-bottom: 20px;
 }
-.menu {
-  font-size: 1.7vh;
-  font-weight: bold;
-  justify-content: space-between;
-  padding: 30px;
-  width: 800px;
-  border-radius: 50px;
-  background: #cfcfcf;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-}
-.menu ul li {
-  color: rgb(39, 39, 39);
-  padding: 10px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  list-style: none;
-  border-color: #fff;
-  background: #999;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-}
-.menu ul li input {
-  width: 50px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  font-family: sans-serif;
-  color: #333;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-.menu ul li input:hover {
-  cursor: pointer;
-  border-color: #999;
-}
-.menu ul li input:focus {
-  border-color: #333;
-}
-.menu ul li button {
-  width: 100px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  font-family: sans-serif;
-  color: #333;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-.menu ul li button:hover {
-  cursor: pointer;
-  border-color: #fff;
-  background: #999;
-}
-.menu ul li button:focus {
-  border-color: #333;
-}
-/* .menu .item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.menu .itemsMenu p {
   font-family: monaco, Consolas, "Lucida Console";
   font-size: 1.5vh;
   border-radius: 20px;
   padding: 7px;
-  gap: 10px;
 }
-.menu .item:hover {
+.menu .itemsMenu p:hover {
   background: #e0e0e0;
-} */
+}
+.menu .pricesMenu p {
+  padding: 7px;
+}
