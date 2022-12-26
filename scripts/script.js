@@ -33,7 +33,8 @@ function somar(event) {
 
   const total = valor1 + valor2 + valor3 + valor4 + ext1 + ext2 + ext3 + ext4;
 
-  document.getElementById("total-to-pay").innerHTML = total;
+  document.getElementById("total-to-pay").innerHTML =
+    "Total to pay: " + total + " €";
 }
 
 document.getElementById("btnItem1").addEventListener("click", somar);
