@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #cac1b7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.menu {
+  font-size: 1.7vh;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+  width: 700px;
+  border-radius: 50px;
+  background: #cfcfcf;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+.title {
+  font-family: Lucida Handwriting;
+  font-size: 2vh;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.menu .itemsMenu p {
+  font-family: monaco, Consolas, "Lucida Console";
+  font-size: 1.5vh;
+  border-radius: 20px;
+  padding: 7px;
+}
+.menu .itemsMenu p:hover {
+  background: #e0e0e0;
+}
+.menu .pricesMenu p {
+  padding: 7px;
+}
