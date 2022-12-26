@@ -12,24 +12,83 @@
       <h1>E-wok menu:</h1>
     </div>
     <div class="menu">
-      <div class="itemsMenu">
-        <p>
-          (1) Wok Wokling - small size (noodles, calamari, shitake, sweet and
-          sour sauce)
-        </p>
-        <p>(2) Wok Wicket (noodles, beef, bacon, green beans, hot sauce)</p>
-        <p>
-          (3) Wok Endor (rice, chicken, breast, red and green pepper, curry
-          sauce)
-        </p>
-        <p>(4) Wok Kneesaa (rice, broccoli, mushrooms, corn, yakisoba sauce)</p>
-      </div>
-      <div class="pricesMenu">
-        <p>4 €</p>
-        <p>6 €</p>
-        <p>7 €</p>
-        <p>6 €</p>
-      </div>
+      <ul>
+        <li>
+          <p>
+            (1) Wok Wokling - small size (noodles, calamari, shitake, sweet and
+            sour sauce)
+          </p>
+          <p id="item1Price">Price: 4 €</p>
+          <form>
+            <label for="wok-1-quantity">Quantity:</label>
+            <input
+              type="number"
+              value="0"
+              min="0"
+              max="5"
+              id="wok-1-quantity"
+              name="wok-1-quantity"
+            />
+            <button type="submit">Add to order</button>
+          </form>
+        </li>
+        <li>
+          <p>(2) Wok Wicket (noodles, beef, bacon, green beans, hot sauce)</p>
+          <p id="item2Price">Price: 6 €</p>
+          <form>
+            <label for="wok-2-quantity">Quantity:</label>
+            <input
+              type="number"
+              value="0"
+              min="0"
+              max="5"
+              id="wok-2-quantity"
+              name="wok-2-quantity"
+            />
+            <button type="submit">Add to order</button>
+          </form>
+        </li>
+        <li>
+          <p>
+            (3) Wok Endor (rice, chicken breast, red and green pepper, curry
+            sauce)
+          </p>
+          <p id="item3Price">Price: 7 €</p>
+          <form>
+            <label for="wok-3-quantity">Quantity:</label>
+            <input
+              type="number"
+              value="0"
+              min="0"
+              max="5"
+              id="wok-3-quantity"
+              name="wok-3-quantity"
+            />
+            <button type="submit">Add to order</button>
+          </form>
+        </li>
+        <li>
+          <p>
+            (4) Wok Kneesaa (rice, broccoli, mushrooms, corn, yakisoba sauce)
+          </p>
+          <p id="item4Price">Price: 6 €</p>
+          <form>
+            <label for="wok-4-quantity">Quantity:</label>
+            <input
+              type="number"
+              value="0"
+              min="0"
+              max="5"
+              id="wok-4-quantity"
+              name="wok-4-quantity"
+            />
+            <button type="submit">Add to order</button>
+          </form>
+        </li>
+      </ul>
+      <h2>Order summary</h2>
+      <p id="total-to-pay">Total to pay: 0 €</p>
     </div>
   </body>
+  <script src="/scripts/script.js"></script>
 </html>
