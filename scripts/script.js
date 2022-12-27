@@ -1,3 +1,5 @@
+console.log(sqlite3);
+
 function somar() {
   const valor1 = document.getElementById("wok-1-quantity").value * 4;
   const valor2 = document.getElementById("wok-2-quantity").value * 6;
@@ -36,7 +38,6 @@ function somar() {
 }
 function sendOrder(event) {
   const order = {};
-  console.log(document.getElementById("total-to-pay").textContent);
   if (document.getElementById("nameClient").value == "") {
     alert("Enter your name");
     event.preventDefault();
@@ -70,8 +71,29 @@ function sendOrder(event) {
       qtd: document.getElementById("wok-4-quantity").value,
       extra: document.getElementById("extra4").value,
     };
-    alert("Order made successfully");
+    const order_json = JSON.stringify(order);
   }
+
+  //     let req = new XMLHttpRequest();
+
+  //     req.onreadystatechange = () => {
+  //       if (req.readyState == XMLHttpRequest.DONE) {
+  //         console.log(req.responseText);
+  //       }
+  //     };
+  //     req.open(
+  //       "POST",
+  //       "https://api.jsonbin.io/v3/b/63aaf8a015ab31599e260367",
+  //       true
+  //     );
+  //     req.setRequestHeader("Content-Type", "application/json");
+  //     req.setRequestHeader(
+  //       "X-Master-Key",
+  //       "$2b$10$CuyJSYeEbByWrT.GCrIOdeOwYmpIIBvPxEzhc4sdS5IQ1OMYXLn/q"
+  //     );
+  //     req.send(order_json);
+  //     alert("Order made successfully");
+  //   }
 }
 
 document.getElementById("wok-1-quantity").addEventListener("input", somar);
