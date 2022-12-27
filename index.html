@@ -14,7 +14,7 @@
     <div class="clientName">
       <p>Entre your name</p>
       <form action="">
-        <input type="text" name="" id="nameClient" maxlength="20" />
+        <input type="text" id="nameClient" maxlength="20" value="" />
       </form>
     </div>
     <div class="menu">
@@ -37,16 +37,13 @@
                 name="wok-1-quantity"
               />
             </div>
-            <div class="formP2">
-              <button type="submit" id="btnItem1">Add to order</button>
-            </div>
             <div class="formP3">
               <label for="extra">Add extra ingredient for 1€:</label>
               <select id="extra1" name="extra">
                 <option></option>
-                <option value="extra1">Cherry tomato</option>
-                <option value="extra2">Prawns</option>
-                <option value="extra3">Pineapple</option>
+                <option value="Cherry tomato">Cherry tomato</option>
+                <option value="Prawns">Prawns</option>
+                <option value="Pineapple">Pineapple</option>
               </select>
             </div>
           </form>
@@ -66,16 +63,13 @@
                 name="wok-2-quantity"
               />
             </div>
-            <div class="formP2">
-              <button type="submit" id="btnItem2">Add to order</button>
-            </div>
             <div class="formP3">
               <label for="extra">Add extra ingredient for 1€:</label>
               <select id="extra2" name="extra">
                 <option></option>
-                <option value="extra1">Cherry tomato</option>
-                <option value="extra2">Prawns</option>
-                <option value="extra3">Pineapple</option>
+                <option value="Cherry tomato">Cherry tomato</option>
+                <option value="Prawns">Prawns</option>
+                <option value="Pineapple">Pineapple</option>
               </select>
             </div>
           </form>
@@ -98,16 +92,13 @@
                 name="wok-3-quantity"
               />
             </div>
-            <div class="formP2">
-              <button type="submit" id="btnItem3">Add to order</button>
-            </div>
             <div class="formP3">
               <label for="extra">Add extra ingredient for 1€:</label>
               <select id="extra3" name="extra">
                 <option></option>
-                <option value="extra1">Cherry tomato</option>
-                <option value="extra2">Prawns</option>
-                <option value="extra3">Pineapple</option>
+                <option value="Cherry tomato">Cherry tomato</option>
+                <option value="Prawns">Prawns</option>
+                <option value="Pineapple">Pineapple</option>
               </select>
             </div>
           </form>
@@ -129,23 +120,27 @@
                 name="wok-4-quantity"
               />
             </div>
-            <div class="formP2">
-              <button type="submit" id="btnItem4">Add to order</button>
-            </div>
             <div class="formP3">
               <label for="extra">Add extra ingredient for 1€:</label>
               <select id="extra4" name="extra">
                 <option></option>
-                <option value="extra1">Cherry tomato</option>
-                <option value="extra2">Prawns</option>
-                <option value="extra3">Pineapple</option>
+                <option value="Cherry tomato">Cherry tomato</option>
+                <option value="Prawns">Prawns</option>
+                <option value="Pineapple">Pineapple</option>
               </select>
             </div>
           </form>
         </li>
       </ul>
-      <h2>Order summary</h2>
-      <p id="total-to-pay">Total to pay:</p>
+      <div class="makeOrder">
+        <div class="total">
+          <h2>Order summary</h2>
+          <p id="total-to-pay">Total to pay: 0 €</p>
+        </div>
+        <div class="mkOrder">
+          <button type="submit" id="mkOrder">Make order</button>
+        </div>
+      </div>
     </div>
   </body>
   <script src="/scripts/script.js"></script>

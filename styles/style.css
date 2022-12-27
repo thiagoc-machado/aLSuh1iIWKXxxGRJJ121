@@ -92,16 +92,6 @@ body {
   border-radius: 10px;
   text-align: center;
 }
-.menu ul li form .formP2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 20px;
-  padding: 10px;
-  width: 200px;
-}
 .menu ul li form .formP3 {
   display: flex;
   flex-direction: column;
@@ -129,23 +119,35 @@ body {
 .menu ul li form .formP3 select:focus {
   border-color: #333;
 }
-.menu ul li button {
+.menu .makeOrder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+.menu .makeOrder .mkOrder button {
   width: 100px;
-  padding: 5px;
+  padding: 10px;
   border: 1px solid #ccc;
   font-family: sans-serif;
   color: #333;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: 0.3s;
 }
-.menu ul li button:hover {
+.menu .makeOrder .mkOrder button:hover {
   cursor: pointer;
   border-color: #fff;
   background: #999;
 }
-.menu ul li button:focus {
+.menu .makeOrder .mkOrder button:focus {
   border-color: #333;
 }
+
 /* .menu .item {
   display: flex;
   flex-direction: row;
