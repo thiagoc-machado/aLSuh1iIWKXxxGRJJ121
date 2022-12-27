@@ -1,5 +1,3 @@
-console.log(sqlite3);
-
 function somar() {
   const valor1 = document.getElementById("wok-1-quantity").value * 4;
   const valor2 = document.getElementById("wok-2-quantity").value * 6;
@@ -73,6 +71,8 @@ function sendOrder(event) {
     };
     const order_json = JSON.stringify(order);
   }
+
+  const mysql = require("mysql");
 
   //     let req = new XMLHttpRequest();
 
