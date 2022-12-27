@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #cac1b7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.title {
+  font-family: Lucida Handwriting;
+  font-size: 2vh;
+  padding: 10px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+.clientName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 40px #ffffff;
+}
+.clientName p {
+  font-family: sans-serif;
+  font-weight: 700;
+}
+.clientName input {
+  margin-top: 10px;
+  width: 150px;
+  padding: 5px;
+  border: 2px solid #ccc;
+  font-family: sans-serif;
+  font-size: large;
+  border-radius: 20px;
+  transition: 0.3s;
+  text-align: center;
+}
+.clientName input:hover {
+  cursor: auto;
+  border-color: #999;
+}
+.clientName input:focus {
+  border-color: #333;
+}
+.menu {
+  font-size: 1.7vh;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 30px;
+  width: 800px;
+  border-radius: 50px;
+  background: #cfcfcf;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 40px #ffffff;
+}
+.menu ul li {
+  display: flex;
+  flex-direction: column;
+  color: rgb(39, 39, 39);
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  list-style: none;
+  border-color: #fff;
+  background: rgb(196, 196, 196);
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 40px #ffffff;
+}
+.menu ul li form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.menu ul li form .formP1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 10px;
+  width: 200px;
+}
+.menu ul li form .formP1 input {
+  margin-top: 2px;
+  width: 50px;
+  padding: 2px;
+  border: 2px solid #ccc;
+  font-family: sans-serif;
+  font-size: small;
+  border-radius: 10px;
+  text-align: center;
+}
+.menu ul li form .formP3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 10px;
+  width: 200px;
+}
+.menu ul li form .formP3 select {
+  margin-top: 10px;
+  width: 150px;
+  padding: 2px;
+  border: 2px solid #ccc;
+  font-family: sans-serif;
+  font-size: small;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+.menu ul li form .formP3 select:hover {
+  cursor: auto;
+  border-color: #999;
+}
+.menu ul li form .formP3 select:focus {
+  border-color: #333;
+}
+.menu .makeOrder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+.menu .makeOrder .mkOrder button {
+  width: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-family: sans-serif;
+  color: #333;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.menu .makeOrder .mkOrder button:hover {
+  cursor: pointer;
+  border-color: #fff;
+  background: #999;
+}
+.menu .makeOrder .mkOrder button:focus {
+  border-color: #333;
+}
+
+/* .menu .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: monaco, Consolas, "Lucida Console";
+  font-size: 1.5vh;
+  border-radius: 20px;
+  padding: 7px;
+  gap: 10px;
+}
+.menu .item:hover {
+  background: #e0e0e0;
+} */

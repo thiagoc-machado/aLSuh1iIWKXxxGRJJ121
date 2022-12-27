@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>E-Wok</title>
+  </head>
+  <body>
+    <div class="title">
+      <h1>E-wok menu:</h1>
+    </div>
+    <div class="clientName">
+      <p>Entre your name</p>
+      <form action="">
+        <input type="text" id="nameClient" maxlength="20" value="" />
+      </form>
+    </div>
+    <div class="menu">
+      <ul>
+        <li>
+          <p>
+            (1) Wok Wokling - small size (noodles, calamari, shitake, sweet and
+            sour sauce)
+          </p>
+          <p id="item1Price">Price: 4 €</p>
+          <form>
+            <div class="formP1">
+              <label for="wok-1-quantity">Quantity:</label>
+              <input
+                type="number"
+                value="0"
+                min="0"
+                max="5"
+                id="wok-1-quantity"
+                name="wok-1-quantity"
+              />
+            </div>
+            <div class="formP3">
+              <label for="extra">Add extra ingredient for 1€:</label>
+              <select id="extra1" name="extra">
+                <option></option>
+                <option value="Cherry tomato">Cherry tomato</option>
+                <option value="Prawns">Prawns</option>
+                <option value="Pineapple">Pineapple</option>
+              </select>
+            </div>
+          </form>
+        </li>
+        <li>
+          <p>(2) Wok Wicket (noodles, beef, bacon, green beans, hot sauce)</p>
+          <p id="item2Price">Price: 6 €</p>
+          <form>
+            <div class="formP1">
+              <label for="wok-2-quantity">Quantity:</label>
+              <input
+                type="number"
+                value="0"
+                min="0"
+                max="5"
+                id="wok-2-quantity"
+                name="wok-2-quantity"
+              />
+            </div>
+            <div class="formP3">
+              <label for="extra">Add extra ingredient for 1€:</label>
+              <select id="extra2" name="extra">
+                <option></option>
+                <option value="Cherry tomato">Cherry tomato</option>
+                <option value="Prawns">Prawns</option>
+                <option value="Pineapple">Pineapple</option>
+              </select>
+            </div>
+          </form>
+        </li>
+        <li>
+          <p>
+            (3) Wok Endor (rice, chicken breast, red and green pepper, curry
+            sauce)
+          </p>
+          <p id="item3Price">Price: 7 €</p>
+          <form>
+            <div class="formP1">
+              <label for="wok-3-quantity">Quantity:</label>
+              <input
+                type="number"
+                value="0"
+                min="0"
+                max="5"
+                id="wok-3-quantity"
+                name="wok-3-quantity"
+              />
+            </div>
+            <div class="formP3">
+              <label for="extra">Add extra ingredient for 1€:</label>
+              <select id="extra3" name="extra">
+                <option></option>
+                <option value="Cherry tomato">Cherry tomato</option>
+                <option value="Prawns">Prawns</option>
+                <option value="Pineapple">Pineapple</option>
+              </select>
+            </div>
+          </form>
+        </li>
+        <li>
+          <p>
+            (4) Wok Kneesaa (rice, broccoli, mushrooms, corn, yakisoba sauce)
+          </p>
+          <p id="item4Price">Price: 6 €</p>
+          <form>
+            <div class="formP1">
+              <label for="wok-4-quantity">Quantity:</label>
+              <input
+                type="number"
+                value="0"
+                min="0"
+                max="5"
+                id="wok-4-quantity"
+                name="wok-4-quantity"
+              />
+            </div>
+            <div class="formP3">
+              <label for="extra">Add extra ingredient for 1€:</label>
+              <select id="extra4" name="extra">
+                <option></option>
+                <option value="Cherry tomato">Cherry tomato</option>
+                <option value="Prawns">Prawns</option>
+                <option value="Pineapple">Pineapple</option>
+              </select>
+            </div>
+          </form>
+        </li>
+      </ul>
+      <div class="makeOrder">
+        <div class="total">
+          <h2>Order summary</h2>
+          <p id="total-to-pay">Total to pay: <a id="total"></a> €</p>
+        </div>
+        <div class="mkOrder">
+          <button type="submit" id="mkOrder">Make order</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../static/script.js"></script>
+</html>
