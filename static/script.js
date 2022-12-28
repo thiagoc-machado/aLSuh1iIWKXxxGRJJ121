@@ -8,22 +8,22 @@ function somar() {
   const extra3 = document.getElementById("extra3").value;
   const extra4 = document.getElementById("extra4").value;
 
-  if (extra1 != "") {
+  if (extra1 != "none") {
     var ext1 = 1;
   } else {
     var ext1 = 0;
   }
-  if (extra2 != "") {
+  if (extra2 != "none") {
     var ext2 = 1;
   } else {
     var ext2 = 0;
   }
-  if (extra3 != "") {
+  if (extra3 != "none") {
     var ext3 = 1;
   } else {
     var ext3 = 0;
   }
-  if (extra4 != "") {
+  if (extra4 != "none") {
     var ext4 = 1;
   } else {
     var ext4 = 0;
@@ -36,6 +36,12 @@ function somar() {
 }
 function sendOrder(event) {
   const order = {};
+
+  const date = new Date();
+  const dateString = date.toLocaleDateString("pt-BR");
+  const timeString = date.toLocaleTimeString("pt-BR");
+  const dateTime = dateString + " " + timeString;
+
   if (document.getElementById("nameClient").value == "") {
     alert("Enter your name");
     event.preventDefault();
@@ -45,7 +51,8 @@ function sendOrder(event) {
   } else {
     let order = {
       client: document.getElementById("nameClient").value,
-      date: new Date(),
+
+      date: dateTime,
       valor: document.getElementById("total").textContent,
 
       item1: "Wokling",

@@ -4,12 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="../static/style_endpoint.css" />
+    <script>
+      var data_out = "{{ data_out }}";
+    </script>
     <title>E-Wok</title>
   </head>
   <body>
     <div class="title">
-      <h1>E-wok menu:</h1>
+      <h1>E-wok menu: EndPoint</h1>
+    </div>
+    <div class="clientName"></div>
+    <div class="menu">
+      <table id="minhaTabela">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Data</th>
+            <th>price</th>
+            <th>wok 1</th>
+            <th>qtd wok1</th>
+            <th>ext wok1</th>
+            <th>wok 2</th>
+            <th>qtd wok2</th>
+            <th>ext wok2</th>
+            <th>wok 3</th>
+            <th>qtd wok3</th>
+            <th>ext wok3</th>
+            <th>wok 4</th>
+            <th>qtd wok4</th>
+            <th>ext wok4</th>
+          </tr>
+        </thead>
+        <tbody class="data">
+          <!-- Os resultados gerados pelo código JavaScript serão inseridos aqui -->
+        </tbody>
+      </table>
     </div>
   </body>
+  </html>
+  <script src="../static/script_endpoint"></script>
 </html>

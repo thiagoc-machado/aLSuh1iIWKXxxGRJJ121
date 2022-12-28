@@ -47,8 +47,8 @@ def read_db():
         'orders.db',
 
         #UTF8 compatible
-        #detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES,
-        #uri=True
+        detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES,
+        uri=True
     )
 
     cursor = conn.cursor()
@@ -56,5 +56,6 @@ def read_db():
     results = cursor.fetchall()
     data_out = json.dumps(results, ensure_ascii=False)
     conn.close()
+    print(data_out)
     return data_out
 
