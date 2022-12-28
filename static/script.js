@@ -28,15 +28,28 @@ function somar() {
   } else {
     var ext4 = 0;
   }
+  let total = "";
+  let total2 = valor1 + valor2 + valor3 + valor4 + ext1 + ext2 + ext3 + ext4;
 
-  const total = valor1 + valor2 + valor3 + valor4 + ext1 + ext2 + ext3 + ext4;
-
-  document.getElementById("total").innerHTML = total;
+  if (
+    document.getElementById("orders").textContent == "2" ||
+    document.getElementById("orders").textContent == "3"
+  ) {
+    total = total2 * 0.9;
+  } else if (
+    document.getElementById("orders").textContent == "0" ||
+    document.getElementById("orders").textContent == "1"
+  ) {
+    total = total2;
+  } else {
+    total = total2 * 0.8;
+  }
+  document.getElementById("total").innerHTML = total2;
+  document.getElementById("priceDisc").innerHTML = "*** " + total + "€ ***";
   return total;
 }
 function sendOrder(event) {
   const order = {};
-
   const date = new Date();
   const dateString = date.toLocaleDateString("pt-BR");
   const timeString = date.toLocaleTimeString("pt-BR");
@@ -82,6 +95,59 @@ function sendOrder(event) {
     });
   }
 }
+
+//counter
+
+function counter(nome) {
+  let lista = data_out.replace(/&#34;/g, '"');
+  lista = lista.replace('"[[', "[[ ");
+  lista = lista.replace(']]"', "]]");
+  lista = lista.replace("&#34;", "");
+  let dados = JSON.parse(lista);
+
+  let count = 0;
+  for (const innerList of dados) {
+    if (innerList[0] === nome) {
+      count++;
+    }
+  }
+  (price = document.getElementById("total").textContent), console.log(price);
+  console.log(`O nome aparece ${count} vezes na lista`);
+  document.getElementById("orders").innerHTML = count;
+  if (count < 2) {
+    document.getElementById("discount").style.display = "none";
+    document.getElementById("priceDiscField").style.display = "none";
+    document.getElementById("total").style.textDecoration = "none";
+    document.getElementById("priceDisc").style.display = "none";
+  }
+  if (count == 2 || count == 3) {
+    document.getElementById("percentage").innerHTML = "10%";
+    document.getElementById("discount").style.display = "block";
+    document.getElementById("priceDiscField").style.display = "block";
+    document.getElementById("priceDisc").style.display = "block";
+    document.getElementById("total").style.textDecoration = "line-through";
+  }
+  if (count > 3) {
+    document.getElementById("percentage").innerHTML = "20%";
+    document.getElementById("discount").style.display = "block";
+    document.getElementById("priceDiscField").style.display = "block";
+    document.getElementById("priceDisc").style.display = "block";
+    document.getElementById("total").style.textDecoration = "line-through";
+  }
+  return count;
+}
+
+const input = document.getElementById("nameClient");
+let timeout;
+
+//call the counter function after a interation in the name field
+input.addEventListener("input", () => {
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    counter(input.value);
+    console.log(input.value);
+  }, 1000); // time to wait
+});
 
 document.getElementById("wok-1-quantity").addEventListener("input", somar);
 document.getElementById("wok-2-quantity").addEventListener("input", somar);

@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/style.css" />
-    <title>E-Wok</title>
+    <script>
+      var data_out = "{{ data_out }}";
+    </script>
+    <title>E-Wo <title>E-Wok</title>
   </head>
   <body>
     <div class="title">
@@ -135,7 +138,17 @@
       <div class="makeOrder">
         <div class="total">
           <h2>Order summary</h2>
-          <p id="total-to-pay">Total to pay: <a id="total"></a> €</p>
+          <p id="total-to-pay">
+            Total to pay: <a id="total"></a> €
+            <a id="priceDiscField"></a>
+            <a id="priceDisc"> €</a>
+          </p>
+        </div>
+        <div class="discount" id="discount">
+          <p>
+            You won <a id="percentage"></a> off <br />you make
+            <a id="orders"></a> order with us.
+          </p>
         </div>
         <div class="mkOrder">
           <button type="submit" id="mkOrder">Make order</button>

@@ -7,8 +7,8 @@ app.config.from_object(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def wok():
-
-    return render_template('index.html')
+    data_out = json.dumps(read_db())
+    return render_template('index.html',data_out=data_out)
 
 @app.route('/endpoint', methods=['GET', 'POST'])
 def endpoint():
@@ -18,7 +18,6 @@ def endpoint():
 @app.route('/api', methods=['GET', 'POST'])
 def api():
     data_out = read_db()
-
     return render_template('api.html', data_out=data_out)
 
 @app.route('/receive_json', methods=['POST'])
