@@ -1,39 +1,63 @@
-console.log(data_out);
+//Filter table
+function filterTable() {
+  const select = document.getElementById("filter");
+  const selectedValue = select.value;
+  const rows = document.querySelectorAll("#minhaTabela tbody tr");
+  for (const row of rows) {
+    const cells = row.querySelectorAll("td");
+    if (cells[0].textContent === selectedValue) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+  }
+}
+
+const btn = document.getElementById("filterButton");
+btn.addEventListener("click", filterTable);
+
+//Reset Filter
+function clearFilter() {
+  const rows = document.querySelectorAll("#minhaTabela tbody tr");
+  for (const row of rows) {
+    row.style.display = "";
+  }
+}
+
+const resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", clearFilter);
+
+//Make Table
+function maketable(dados) {
+  const tbody = document.querySelector("#minhaTabela tbody");
+  const linhas = dados
+    .map((dados) => {
+      const linha = dados.map((coluna) => `<td>${coluna}</td>`).join("");
+      return `<tr>${linha}</tr>`;
+    })
+    .join("");
+  tbody.insertAdjacentHTML("beforeend", linhas);
+
+  // fill the filter field
+  const select = document.getElementById("filter");
+  const options = new Set();
+  for (const innerList of dados) {
+    const value = innerList[0];
+    if (!options.has(value)) {
+      options.add(value);
+      const option = document.createElement("option");
+      option.value = value;
+      option.text = value;
+      select.add(option);
+    }
+  }
+}
+
+//receive data fron backend
 let lista = data_out.replace(/&#34;/g, '"');
 lista = lista.replace('"[[', "[[ ");
 lista = lista.replace(']]"', "]]");
 lista = lista.replace("&#34;", "");
-
-console.log(lista);
 let dados = JSON.parse(lista);
-console.log(dados);
-//const tabela = dados
-//   .map((lista) => {
-//     const linha = lista.map((coluna) => `<td>${coluna}</td>`).join("");
-//     return `<tr>${linha}</tr>`;
-//   })
-//   .join("");
 
-// linha = document.getElementById("tabela").innerHTML;
-
-//const tabela = document.createElement("table");
-//const corpoTabela = document.createElement("tbody");
-
-// Gera as linhas da tabela a partir do map
-// const linhas = dados
-//   .map((dados) => {
-//     const linha = dados.map((coluna) => `<td>${coluna}</td>`).join("");
-//     return `<tr>${linha}</tr>`;
-//   })
-//   .join("");
-
-const tbody = document.querySelector("#minhaTabela tbody"); // Obtém a referência para o elemento tbody da tabela
-
-const linhas = dados
-  .map((dados) => {
-    const linha = dados.map((coluna) => `<td>${coluna}</td>`).join("");
-    return `<tr>${linha}</tr>`;
-  })
-  .join("");
-
-tbody.insertAdjacentHTML("beforeend", linhas); // Adiciona o conteúdo HTML gerado pelo código como filho do elemento tbody
+maketable(dados);

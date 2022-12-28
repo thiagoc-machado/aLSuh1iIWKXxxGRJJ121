@@ -16,20 +16,20 @@ body {
   margin-top: -20px;
   margin-bottom: 20px;
 }
-.clientName {
+.filter {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-around;
   padding: 10px;
   border-radius: 20px;
-  margin-bottom: 40px;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 40px #ffffff;
 }
-.clientName p {
+.filter a {
   font-family: sans-serif;
   font-weight: 700;
 }
-.clientName input {
+.filter select {
   margin-top: 10px;
   width: 150px;
   padding: 5px;
@@ -40,11 +40,28 @@ body {
   transition: 0.3s;
   text-align: center;
 }
-.clientName input:hover {
+.filter select:hover {
   cursor: auto;
   border-color: #999;
 }
-.clientName input:focus {
+.filter select:focus {
+  border-color: #333;
+}
+.filter button {
+  width: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-family: sans-serif;
+  color: #333;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.filter button:hover {
+  cursor: pointer;
+  border-color: #fff;
+  background: #999;
+}
+.filter button:focus {
   border-color: #333;
 }
 .menu {
