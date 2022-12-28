@@ -93,6 +93,8 @@ function sendOrder(event) {
       },
       body: JSON.stringify(order),
     });
+    alert("order sent successfully ");
+    window.location.reload(true);
   }
 }
 
