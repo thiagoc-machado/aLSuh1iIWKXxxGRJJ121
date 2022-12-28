@@ -2,42 +2,59 @@ import json
 import sqlite3
 
 def db(data):
+    print(data)
+    conn = sqlite3.connect(
+        'orders.db'
+        )
+        
+    cursor = conn.cursor()
+    cursor.execute('''
+        INSERT INTO orders (client, date, valor, item1, item1_qtd, item1_extra, item2, item2_qtd, item2_extra, item3, item3_qtd, item3_extra, item4, item4_qtd, item4_extra)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ''', (data['client'], data['date'], data['valor'], data['item1'], data['item1_qtd'], data['item1_extra'], data['item2'], data['item2_qtd'], data['item2_extra'], data['item3'], data['item3_qtd'], data['item3_extra'], data['item4'], data['item4_qtd'], data['item4_extra']))
 
-    # Connect to the database
-    conn = sqlite3.connect('mydatabase.db')
+    conn.commit()
+    conn.close()
+
+def create_table():
+    conn = sqlite3.connect('orders.db')
     cursor = conn.cursor()
 
-    # Create the table
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS mytable (
-            id INTEGER PRIMARY KEY,
-            key1 TEXT,
-            key2 TEXT,
-            key3 TEXT
-            key4 TEXT
-            key5 TEXT
-            key6 TEXT
-            key7 TEXT
-            key8 TEXT
-            key9 TEXT
-            key10 TEXT
-            key11 TEXT
-            key12 TEXT
-            key13 TEXT
-            key14 TEXT
-            key15 TEXT
-            
+        CREATE TABLE orders (
+            client text,
+            date text,
+            valor real,
+            item1 text,
+            item1_qtd integer,
+            item1_extra text,
+            item2 text,
+            item2_qtd integer,
+            item2_extra text,
+            item3 text,
+            item3_qtd integer,
+            item3_extra text,
+            item4 text,
+            item4_qtd integer,
+            item4_extra text
         )
     ''')
 
-    # Insert the data into the table
-    for item in data:
-        cursor.execute('''
-            INSERT INTO mytable (key1, key2, key3, key4, key5, key6, key7, key8, key9, key10, key11, key12, key13, key14,key15)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', (item['key1'], item['key2'], item['key3'], item['key4'], item['key5'], item['key6'], item['key7'], item['key8'], item['key9'], item['key10'], item['key11'], item['key12'], item['key13'], item['key14'], item['key15']))
+#create_table()
 
-    # Commit the changes and close the connection
-    conn.commit()
-    print("db gravado")
+def read_db():
+    conn = sqlite3.connect(
+        'orders.db',
+
+        #UTF8 compatible
+        #detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES,
+        #uri=True
+    )
+
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM orders')
+    results = cursor.fetchall()
+    data_out = json.dumps(results, ensure_ascii=False)
     conn.close()
+    return data_out
+

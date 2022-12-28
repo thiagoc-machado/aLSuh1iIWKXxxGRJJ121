@@ -1,22 +1,20 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import json
-from database import db
+from db import db, read_db
 
 app = Flask(__name__)
 app.config.from_object(__name__)
-
-global data
 
 @app.route('/', methods=['GET', 'POST'])
 def wok():
 
     return render_template('index.html')
 
-
 @app.route('/endpoint', methods=['GET', 'POST'])
 def endpoint():
-
-    return render_template('endpoint.html')
+    data_out = read_db()
+    print(data_out)
+    return render_template('endpoint.html', data_out=data_out)
 
 @app.route('/receive_json', methods=['POST'])
 def receive_json():
