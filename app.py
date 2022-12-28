@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request
 import json
-from db import db
+from database import db
 
 app = Flask(__name__)
 app.config.from_object(__name__)
+
+global data
 
 @app.route('/', methods=['GET', 'POST'])
 def wok():
