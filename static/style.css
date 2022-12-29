@@ -216,7 +216,7 @@ body {
     justify-content: space-around;
   }
   .menu ul li .item {
-    font-size: small;
+    font-size: 1vh;
   }
   .clientName {
     gap: 5px;
