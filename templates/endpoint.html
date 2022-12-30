@@ -8,20 +8,24 @@
     <script>
       var data_out = "{{ data_out }}";
     </script>
-    <title>E-Wok</title>
+    <title>E-Wok - Endpoint</title>
   </head>
   <body>
     <div class="title">
       <h1>E-wok menu: EndPoint</h1>
-      <div class="filter">
-        <a>Filter</a>
-        <select id="filter" name="filter">
-        <option></option>
-      </select>
-      <button id="filterButton">Filter</button>
-      <button id="resetButton">Reset</button>
+      <div class="opc">
+        <div class="reload">
+          <input type="checkbox" id="auto-refresh-checkbox"> Atualizar automaticamente a página
+        </div>
+        <div class="filter">
+          <a>Filter</a>
+          <select id="filter" name="filter">
+          <option></option>
+          </select>
+            <button id="filterButton">Filter</button>
+            <button id="resetButton">Reset</button>
+          </div>
       </div>
-      
     </div>
     <div class="clientName"></div>
     <div class="menu">

@@ -1,3 +1,30 @@
+// Auto reloader
+
+let intervalId;
+
+function toggleAutoRefresh(enable) {
+  const checkbox = document.getElementById("auto-refresh-checkbox");
+  checkbox.checked = enable;
+
+  if (enable) {
+    intervalId = setInterval(function () {
+      location.reload();
+    }, 5000); // Atualiza a página a cada 5 segundos (em milissegundos)
+  } else {
+    clearInterval(intervalId);
+  }
+}
+
+document
+  .getElementById("auto-refresh-checkbox")
+  .addEventListener("change", function (event) {
+    toggleAutoRefresh(event.target.checked);
+  });
+
+window.addEventListener("load", function () {
+  toggleAutoRefresh(true);
+});
+
 //Filter table
 function filterTable() {
   const select = document.getElementById("filter");
